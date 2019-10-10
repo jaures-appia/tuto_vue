@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    <h1 class="text-center">Tutoriel Vue js</h1><hr>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Variable</h1>
+                    ${ message }
+                    <p>Nom: ${ nom }</p>
+                    <p>Prenom: ${ prenom }</p>
+                    <a :href="nanurl" target="_blank">lien de l'ecole NaN</a><br>
+                    <!-- <img :src=" imageurl " alt=""> -->
+                </div>
+
+                <div class="col-md-5">
+                    <h1>Condition</h1>
+                    <div v-if="primary" class="alert alert-primary" role="alert">
+                    This is a primary alert—check it out!
+                    </div>
+                    <div v-if="secondary" class="alert alert-secondary" role="alert">
+                    This is a secondary alert—check it out!
+                    </div>
+                    <div v-if="success" class="alert alert-success" role="alert">
+                    This is a success alert—check it out!
+                    </div>
+                    <div v-if="danger" class="alert alert-danger" role="alert">
+                    This is a danger alert—check it out!
+                    </div><hr>
+                    <button type="button" v-on:click="afficheprimary" class="btn btn-primary">Primary</button>
+                    <button type="button" v-on:click="affichesecondary" class="btn btn-secondary">Secondary</button>
+                    <button type="button" v-on:click="affichesuccess" class="btn btn-success">Success</button>
+                    <button type="button" v-on:click="affichedanger" class="btn btn-danger">Danger</button><hr>
+                    <button type="button" v-on:click="toutcacher" class="btn btn-warning">Warning</button>
+                    <button type="button" v-on:click="toutafficher" class="btn btn-info">Info</button>
+
+                </div>
+
+                <div class="col-md-3">
+                    <h1>Form-model</h1><hr>
+                    
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea v-model="chatmessage" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div><hr>
+                        <p>${ chatmessage }</p>
+
+                </div>
+               
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>HTML VIEW</h1><hr>
+                    <div class="alert alert-warning" role="alert">
+                        <div class="card">
+                            <div v-html="editortext" class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h1>EDITOR</h1><hr>
+                    <div class="alert alert-primary" role="alert">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                    <textarea v-model="editortext" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>FOR-LOOP</h1><hr>
+                    <ol>
+                        <li v-for="todo in todos">
+                        ${ todo.text }
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="alert alert-secondary" role="alert">
+                <button  type="button" v-on:click="onload" class="btn btn-info">Info</button>
+                <div v-if="dataisload" class="row">
+                    <div v-for="item in dataapi" class="col-md-4">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <p>
+                                    <b>nom:</b> ${ item.name }
+                                </p>
+                                <p>
+                                    <b>prenom:</b> ${ item.username }
+                                </p>
+                                <p>
+                                    <b>email:</b> <a :href="item.email">${ item.email }</a>
+                                </p>
+                                <p>
+                                    <b>phone:</b> <a :href="item.phone">${ item.phone }</a>
+                                </p>
+                                <p>
+                                    <b>website:</b> <a :href="item.website">${ item.website }</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- {{ message }} -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            nom: 'NaN',
+            prenom: '2019',
+            imageurl: 'https://cdn.pixabay.com/photo/2018/04/03/23/29/wordpress-3288420_1280.png',
+            nanurl: 'http://nan.ci',
+            chatmessage: "salut",
+            editortext: "<b>salut</b>",
+            primary: false,
+            secondary: false,
+            success: false,
+            danger: false,
+            dataisload: false,
+            todos: [
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue' },
+                { text: 'Build something awesome' }
+            ],
+            dataapi: [],
+            
+        },
+        delimiters:["${", "}"],
+        mounted(){
+            this.onload();
+        },
+        methods: {
+            onload() {
+
+                //axios.defaults.xsrfCookieName = 'csrftoken'
+                //axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
+                axios.get('https://jsonplaceholder.typicode.com/users')
+                    .then(response => {
+                        console.log(response.data)
+                        this.dataapi = response.data;
+                        this.dataisload = true;
+
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            },
+            afficheprimary: function () {
+                this.primary = true;
+                this.secondary = false;
+                this.success = false;
+                this.danger = false;
+            },
+            affichesecondary: function () {
+                this.primary = false;
+                this.secondary = true;
+                this.success = false;
+                this.danger = false;
+            },
+            affichesuccess: function () {
+                this.primary = false;
+                this.secondary = false;
+                this.success = true;
+                this.danger = false;
+            },
+            affichedanger: function () {
+                this.primary = false;
+                this.secondary = false;
+                this.success = false;
+                this.danger = true;
+            },
+            toutafficher: function () {
+                this.primary = true;
+                this.secondary = true;
+                this.success = true;
+                this.danger = true;
+            },
+            toutcacher: function () {
+                this.primary = false;
+                this.secondary = false;
+                this.success = false;
+                this.danger = false;
+            },
+        }
+    })
+    </script>
+</body>
+</html>
